@@ -30,7 +30,7 @@ assert(js.includes('document.body.dataset.mvmNewsroomTheme = safeTheme'), 'Theme
 assert(css.includes('body[data-mvm-newsroom-theme="light"] #wpcontent'), 'Light admin canvas selector missing');
 assert(css.includes('body[data-mvm-newsroom-theme="dark"] #wpcontent'), 'Dark admin canvas selector missing');
 assert(css.includes('background: #0E1721;'), 'Dark admin canvas background missing');
-assert(css.includes('background: #F4F7FA;'), 'Light admin canvas background missing');
+assert(css.includes('background: #F5F7FA;'), 'Canonical MvM light admin canvas background missing');
 
 assert(!fs.existsSync('plugins/mvm-hub/modules/newsroom/class-newsroom-2-renderer.php'), 'Deprecated standalone Newsroom 2 renderer must not return');
 
