@@ -41,3 +41,18 @@ This provenance record by itself does not authorize a release. A release is auth
 5. artifact SHA-256 evidence is published by that exact workflow run.
 
 After this transition, protected public `main` plus its exact green CI artifact becomes the release authority. The private repository remains development/history context and is not mutated by this transition.
+
+## Subsequent release update — backend style alignment (2026-09-07)
+
+The protected public release authority remains the source of release artifacts. This update originated from private development commit `94d032380808a804a16b302f0d1120092f370ae4`, whose exact-head MvM Hub Newsroom run #1082 completed successfully before publication.
+
+- Scope: MvM Hub / Newsroom backend style alignment plus portable style and backend-boundary contracts.
+- Private `plugins/` tree: `4d0938f25c693100daeb00ad87e440d3c6e2c88d`
+- Public `plugins/` tree before this provenance/workflow commit: `4d0938f25c693100daeb00ad87e440d3c6e2c88d`
+- Result: exact plugin-tree match.
+- Private full `tests/` tree: `ca4248f18ed121827109e32845676cd5e28f87ef`
+- Public sanitized `tests/` tree: `20bddbe3811b18c3da11aea52503b3cb3aeb9834`
+- Result: intentionally different because private/live/evidence-only tests remain outside the public boundary; the retained style and backend-boundary contract files are published unchanged.
+- `themes/` remains `278f6089230fdd84e3a88043e68a98f5e38fb0ec`.
+
+No private Git history, environment configuration, credentials, runtime storage or production evidence was published by this update. The public workflow is updated to verify these new exact tree identities and to execute the portable JavaScript contracts before building a release artifact.
