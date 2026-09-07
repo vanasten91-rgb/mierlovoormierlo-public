@@ -1,0 +1,104 @@
+/* Read-only Newsroom module preview. Loaded only through the inert asset manifest. */
+
+.mvm-hub .mvm-newsroom-preview {
+  display: grid;
+  gap: var(--mvm-space-6);
+}
+
+.mvm-hub .mvm-newsroom-preview__section {
+  display: grid;
+  gap: var(--mvm-space-4);
+}
+
+.mvm-hub .mvm-newsroom-preview__section-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--mvm-space-4);
+}
+
+.mvm-hub .mvm-newsroom-preview__section-head h2,
+.mvm-hub .mvm-newsroom-preview__section h2,
+.mvm-hub .mvm-newsroom-preview__module-title {
+  margin: 0;
+  color: var(--mvm-text);
+}
+
+.mvm-hub .mvm-newsroom-preview__muted,
+.mvm-hub .mvm-newsroom-preview__section-head p {
+  color: var(--mvm-text-muted);
+}
+
+.mvm-hub .mvm-newsroom-preview__metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--mvm-space-3);
+}
+
+.mvm-hub .mvm-newsroom-preview__metric {
+  display: grid;
+  gap: var(--mvm-space-2);
+  min-height: 116px;
+  align-content: center;
+}
+
+.mvm-hub .mvm-newsroom-preview__metric-value {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1;
+  color: var(--mvm-blue);
+}
+
+.mvm-hub .mvm-newsroom-preview__actions {
+  display: grid;
+  gap: var(--mvm-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: mvm-action;
+}
+
+.mvm-hub .mvm-newsroom-preview__actions > li {
+  position: relative;
+  padding-left: 3.75rem;
+  counter-increment: mvm-action;
+}
+
+.mvm-hub .mvm-newsroom-preview__actions > li::before {
+  content: counter(mvm-action);
+  position: absolute;
+  top: var(--mvm-space-4);
+  left: var(--mvm-space-4);
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--mvm-blue-soft);
+  color: var(--mvm-blue-strong);
+  font-weight: 800;
+}
+
+.mvm-hub .mvm-newsroom-preview__actions p {
+  margin: var(--mvm-space-2) 0 0;
+  color: var(--mvm-text-muted);
+}
+
+.mvm-hub .mvm-newsroom-preview .mvm-table td:first-child {
+  min-width: 220px;
+}
+
+@media (max-width: 600px) {
+  .mvm-hub .mvm-newsroom-preview__section-head {
+    flex-direction: column;
+  }
+
+  .mvm-hub .mvm-newsroom-preview__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .mvm-hub .mvm-newsroom-preview__metrics {
+    grid-template-columns: 1fr;
+  }
+}

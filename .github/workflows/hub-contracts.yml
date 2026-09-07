@@ -1,0 +1,85 @@
+name: Hub contracts
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hub-contracts-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  hub-contracts:
+    name: hub-contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Set up PHP 8.4
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      - name: Check PHP syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          find plugins tests -type f -name '*.php' -print0 \
+            | xargs -0 -n1 php -l
+
+      - name: Check JavaScript contract syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          find tests -maxdepth 1 -type f -name '*.cjs' -print0 \
+            | xargs -0 -n1 node --check
+
+      - name: Run portable Hub smoke tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          tests=(
+            tests/mvm-hub-bootstrap-smoke.php
+            tests/mvm-hub-route-runtime-smoke.php
+            tests/mvm-hub-v5-policy-smoke.php
+            tests/mvm-hub-v5-preview-smoke.php
+            tests/mvm-hub-v5-work-item-service-smoke.php
+            tests/mvm-hub-v5-domain-event-outbox-smoke.php
+            tests/mvm-hub-v5-cross-domain-smoke.php
+            tests/mvm-hub-v5-intake-owner-smoke.php
+            tests/mvm-hub-v5-agenda-owner-smoke.php
+            tests/mvm-hub-v5-read-provider-smoke.php
+            tests/mvm-hub-v5-search-policy-smoke.php
+            tests/mvm-hub-v5-media-submission-policy-smoke.php
+            tests/mvm-hub-v5-search-read-model-smoke.php
+            tests/mvm-hub-v5-collaboration-smoke.php
+            tests/mvm-hub-v5-communications-preview-smoke.php
+            tests/mvm-hub-v5-community-layout-smoke.php
+            tests/mvm-hub-mail-attachment-policy-smoke.php
+            tests/mvm-hub-cloudmersive-attachment-scanner-smoke.php
+            tests/mvm-hub-v5-mail-compose-attachment-smoke.php
+            tests/mvm-hub-v5-mail-read-actions-smoke.php
+            tests/mvm-hub-v5-mail-provider-stack-smoke.php
+            tests/mvm-hub-v5-mail-application-smoke.php
+            tests/mvm-hub-v5-mail-v2-smoke.php
+          )
+
+          for test_file in "${tests[@]}"; do
+            echo "Running ${test_file}"
+            php "${test_file}"
+          done

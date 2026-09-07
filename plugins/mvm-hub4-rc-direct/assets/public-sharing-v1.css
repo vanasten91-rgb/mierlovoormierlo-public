@@ -1,0 +1,42 @@
+.mvm-share-v1{--mvm-share-blue:#1966AE;--mvm-share-blue-dark:#124f88;--mvm-share-border:#d6e1ea;--mvm-share-bg:#f6f9fc;--mvm-share-text:#17222d;--mvm-share-muted:#536475;margin:24px 0;padding:18px;border:1px solid var(--mvm-share-border);border-radius:14px;background:var(--mvm-share-bg);color:var(--mvm-share-text)}.mvm-share-v1__head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:12px}.mvm-share-v1__head h2{margin:0;font-size:1.1rem;text-transform:none}.mvm-share-v1__head p{margin:0;color:var(--mvm-share-muted);font-size:.9rem}.mvm-share-v1__actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.mvm-share-v1__button{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 13px;border:1px solid var(--mvm-share-blue);border-radius:9px;background:#fff;color:var(--mvm-share-blue)!important;font:inherit;font-weight:800;line-height:1.2;text-decoration:none!important;cursor:pointer}.mvm-share-v1__button:hover,.mvm-share-v1__button:focus-visible{background:var(--mvm-share-blue);color:#fff!important;outline:none}.mvm-share-v1__button:focus-visible{box-shadow:0 0 0 3px #ffbf47}.mvm-share-v1__status{min-height:1.2em;color:var(--mvm-share-muted);font-size:.85rem}.mvm-share-v1__button[disabled]{opacity:.6;cursor:wait}@media(max-width:640px){.mvm-share-v1__head{display:block}.mvm-share-v1__head p{margin-top:4px}.mvm-share-v1__actions{display:grid;grid-template-columns:1fr 1fr}.mvm-share-v1__button{width:100%}.mvm-share-v1__status{grid-column:1/-1}}@media(prefers-color-scheme:dark){body.mvm-dark .mvm-share-v1,html[data-theme="dark"] .mvm-share-v1{--mvm-share-border:#344554;--mvm-share-bg:#111820;--mvm-share-text:#eef5fb;--mvm-share-muted:#bac8d4}.mvm-share-v1__button{background:transparent}}
+
+/* Event details already expose the richer event-specific sharing controls in
+ * Praktische informatie. Do not render a second generic sharing card below. */
+body.single-event_listing main article > .mvm-share-v1,
+body.single-event_listing article > .mvm-share-v1 {
+    display: none !important;
+}
+
+/* Event video blocks follow the source aspect ratio instead of inheriting a
+ * fixed theme height. */
+body.single-event_listing .wpem-single-event-body-content .wp-block-embed.is-type-video,
+body.single-event_listing .wpem-single-event-body-content .wp-block-video,
+body.single-event_listing .wpem-single-event-body-content .wp-block-embed.is-type-video .wp-block-embed__wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+body.single-event_listing .wpem-single-event-body-content .wp-block-embed.is-type-video iframe {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border: 0 !important;
+}
+
+body.single-event_listing .wpem-single-event-body-content .wp-embed-aspect-21-9 iframe { aspect-ratio: 21 / 9 !important; }
+body.single-event_listing .wpem-single-event-body-content .wp-embed-aspect-18-9 iframe { aspect-ratio: 18 / 9 !important; }
+body.single-event_listing .wpem-single-event-body-content .wp-embed-aspect-16-9 iframe { aspect-ratio: 16 / 9 !important; }
+body.single-event_listing .wpem-single-event-body-content .wp-embed-aspect-4-3 iframe { aspect-ratio: 4 / 3 !important; }
+body.single-event_listing .wpem-single-event-body-content .wp-embed-aspect-1-1 iframe { aspect-ratio: 1 / 1 !important; }
+body.single-event_listing .wpem-single-event-body-content .wp-embed-aspect-2-3 iframe { aspect-ratio: 2 / 3 !important; }
+body.single-event_listing .wpem-single-event-body-content .wp-embed-aspect-9-16 iframe { aspect-ratio: 9 / 16 !important; }
+
+body.single-event_listing .wpem-single-event-body-content .wp-block-video video,
+body.single-event_listing .wpem-single-event-body-content video.wp-video-shortcode {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+}

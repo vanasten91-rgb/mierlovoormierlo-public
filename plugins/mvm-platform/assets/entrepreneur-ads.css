@@ -1,0 +1,375 @@
+:root {
+    --mvm-entrepreneur-blue: #1966AE;
+    --mvm-entrepreneur-blue-deep: #0f4f8d;
+    --mvm-entrepreneur-surface: #ffffff;
+    --mvm-entrepreneur-surface-soft: #f5f8fb;
+    --mvm-entrepreneur-text: #172230;
+    --mvm-entrepreneur-muted: #5b6876;
+    --mvm-entrepreneur-border: #d9e2ec;
+    --mvm-entrepreneur-danger: #a72828;
+    --mvm-entrepreneur-success: #1d6b42;
+    --mvm-entrepreneur-shadow: 0 16px 40px rgba(22, 52, 83, .10);
+}
+
+.mvm-entrepreneur {
+    width: min(1180px, calc(100% - 32px));
+    margin: 32px auto 56px;
+    color: var(--mvm-entrepreneur-text);
+}
+
+.mvm-entrepreneur__hero,
+.mvm-entrepreneur__panel {
+    background: var(--mvm-entrepreneur-surface);
+    border: 1px solid var(--mvm-entrepreneur-border);
+    border-radius: 18px;
+    box-shadow: var(--mvm-entrepreneur-shadow);
+}
+
+.mvm-entrepreneur__hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: clamp(24px, 4vw, 44px);
+    margin-bottom: 24px;
+    border-top: 5px solid var(--mvm-entrepreneur-blue);
+}
+
+.mvm-entrepreneur__hero h1,
+.mvm-entrepreneur__panel h2,
+.mvm-entrepreneur__ad h3 {
+    margin: 0;
+    text-transform: none;
+    color: var(--mvm-entrepreneur-text);
+}
+
+.mvm-entrepreneur__hero > div:first-child > p:last-child {
+    max-width: 760px;
+    margin: 12px 0 0;
+    color: var(--mvm-entrepreneur-muted);
+}
+
+.mvm-entrepreneur__eyebrow {
+    margin: 0 0 7px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    color: var(--mvm-entrepreneur-blue);
+}
+
+.mvm-entrepreneur__account {
+    min-width: 190px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: var(--mvm-entrepreneur-surface-soft);
+    border: 1px solid var(--mvm-entrepreneur-border);
+}
+
+.mvm-entrepreneur__account span,
+.mvm-entrepreneur__account strong {
+    display: block;
+}
+
+.mvm-entrepreneur__account span {
+    font-size: .82rem;
+    color: var(--mvm-entrepreneur-muted);
+}
+
+.mvm-entrepreneur__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(260px, .8fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.mvm-entrepreneur__panel {
+    padding: clamp(20px, 3vw, 32px);
+}
+
+.mvm-entrepreneur__panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.mvm-entrepreneur__form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.mvm-entrepreneur__form label,
+.mvm-entrepreneur__image-field,
+.mvm-entrepreneur__form fieldset {
+    display: grid;
+    gap: 7px;
+    margin: 0;
+}
+
+.mvm-entrepreneur__form label > span,
+.mvm-entrepreneur__image-field > span,
+.mvm-entrepreneur__form legend {
+    font-weight: 700;
+}
+
+.mvm-entrepreneur__form input,
+.mvm-entrepreneur__form textarea,
+.mvm-entrepreneur__form select {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid var(--mvm-entrepreneur-border);
+    border-radius: 11px;
+    padding: 10px 12px;
+    background: var(--mvm-entrepreneur-surface);
+    color: var(--mvm-entrepreneur-text);
+}
+
+.mvm-entrepreneur__form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.mvm-entrepreneur__form input:focus,
+.mvm-entrepreneur__form textarea:focus,
+.mvm-entrepreneur__form select:focus,
+.mvm-entrepreneur button:focus-visible,
+.mvm-entrepreneur a:focus-visible {
+    outline: 3px solid rgba(25, 102, 174, .28);
+    outline-offset: 2px;
+    border-color: var(--mvm-entrepreneur-blue);
+}
+
+.mvm-entrepreneur .is-wide {
+    grid-column: 1 / -1;
+}
+
+.mvm-entrepreneur__placements {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.mvm-entrepreneur__placement {
+    display: flex !important;
+    grid-template-columns: none !important;
+    align-items: center;
+    gap: 9px !important;
+    padding: 11px 12px;
+    border: 1px solid var(--mvm-entrepreneur-border);
+    border-radius: 11px;
+    background: var(--mvm-entrepreneur-surface-soft);
+}
+
+.mvm-entrepreneur__placement input {
+    width: auto;
+    min-height: auto;
+    margin: 0;
+}
+
+.mvm-entrepreneur__actions,
+.mvm-entrepreneur__ad-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.mvm-entrepreneur__primary,
+.mvm-entrepreneur__secondary,
+.mvm-entrepreneur__danger {
+    min-height: 42px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    padding: 9px 17px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.mvm-entrepreneur__primary {
+    background: var(--mvm-entrepreneur-blue);
+    color: #ffffff;
+}
+
+.mvm-entrepreneur__primary:hover {
+    background: var(--mvm-entrepreneur-blue-deep);
+}
+
+.mvm-entrepreneur__secondary {
+    background: var(--mvm-entrepreneur-surface-soft);
+    border-color: var(--mvm-entrepreneur-border);
+    color: var(--mvm-entrepreneur-blue-deep);
+}
+
+.mvm-entrepreneur__danger {
+    background: transparent;
+    border-color: rgba(167, 40, 40, .35);
+    color: var(--mvm-entrepreneur-danger);
+}
+
+.mvm-entrepreneur button:disabled {
+    opacity: .55;
+    cursor: wait;
+}
+
+.mvm-entrepreneur__status {
+    margin: 0;
+    color: var(--mvm-entrepreneur-muted);
+}
+
+.mvm-entrepreneur__status.is-error {
+    color: var(--mvm-entrepreneur-danger);
+    font-weight: 700;
+}
+
+.mvm-entrepreneur__help ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.mvm-entrepreneur__help li + li {
+    margin-top: 10px;
+}
+
+.mvm-entrepreneur__mine {
+    margin-top: 24px;
+}
+
+.mvm-entrepreneur__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.mvm-entrepreneur__ad {
+    overflow: hidden;
+    border: 1px solid var(--mvm-entrepreneur-border);
+    border-radius: 16px;
+    background: var(--mvm-entrepreneur-surface-soft);
+}
+
+.mvm-entrepreneur__ad-media {
+    aspect-ratio: 16 / 7;
+    background: #dfe9f4;
+}
+
+.mvm-entrepreneur__ad-media img,
+.mvm-entrepreneur__image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mvm-entrepreneur__ad-body {
+    padding: 18px;
+}
+
+.mvm-entrepreneur__ad-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.mvm-entrepreneur__ad-body > p {
+    color: var(--mvm-entrepreneur-muted);
+}
+
+.mvm-entrepreneur__badge {
+    display: inline-flex;
+    padding: 4px 9px;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 800;
+    background: #e8eef4;
+    color: #33465a;
+}
+
+.mvm-entrepreneur__badge.is-active {
+    background: #dff3e7;
+    color: var(--mvm-entrepreneur-success);
+}
+
+.mvm-entrepreneur__badge.is-paused {
+    background: #fff0cf;
+    color: #744b00;
+}
+
+.mvm-entrepreneur__badge.is-ended,
+.mvm-entrepreneur__badge.is-suspended {
+    background: #f0e5e5;
+    color: #762828;
+}
+
+.mvm-entrepreneur__suspension-note {
+    margin: 0;
+    font-weight: 700;
+    color: var(--mvm-entrepreneur-danger) !important;
+}
+
+.mvm-entrepreneur__image-preview {
+    width: min(300px, 100%);
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--mvm-entrepreneur-border);
+}
+
+.mvm-entrepreneur__empty {
+    grid-column: 1 / -1;
+    padding: 22px;
+    text-align: center;
+    border: 1px dashed var(--mvm-entrepreneur-border);
+    border-radius: 14px;
+    color: var(--mvm-entrepreneur-muted);
+}
+
+html[data-theme="dark"] .mvm-entrepreneur,
+body.dark-mode .mvm-entrepreneur,
+body.mvm-dark .mvm-entrepreneur {
+    --mvm-entrepreneur-surface: #121b25;
+    --mvm-entrepreneur-surface-soft: #192532;
+    --mvm-entrepreneur-text: #f5f8fb;
+    --mvm-entrepreneur-muted: #c2cfdb;
+    --mvm-entrepreneur-border: #34495c;
+    --mvm-entrepreneur-shadow: 0 16px 40px rgba(0, 0, 0, .26);
+}
+
+@media (max-width: 900px) {
+    .mvm-entrepreneur__layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .mvm-entrepreneur {
+        width: min(100% - 20px, 1180px);
+        margin-top: 16px;
+    }
+
+    .mvm-entrepreneur__hero,
+    .mvm-entrepreneur__panel-head,
+    .mvm-entrepreneur__actions,
+    .mvm-entrepreneur__ad-top {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .mvm-entrepreneur__account {
+        min-width: 0;
+    }
+
+    .mvm-entrepreneur__form,
+    .mvm-entrepreneur__placements,
+    .mvm-entrepreneur__list {
+        grid-template-columns: 1fr;
+    }
+
+    .mvm-entrepreneur__form > * {
+        grid-column: 1 / -1;
+    }
+}

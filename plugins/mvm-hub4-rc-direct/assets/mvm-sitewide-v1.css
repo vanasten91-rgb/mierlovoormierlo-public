@@ -1,0 +1,359 @@
+:root{
+  --mvm-brand:#1966AE;
+  --mvm-brand-dark:#124f88;
+  --mvm-ink:#17202a;
+  --mvm-muted:#465b6c;
+  --mvm-surface:#fff;
+  --mvm-soft:#eef3f8;
+  --mvm-border:#d2dee8;
+  --mvm-focus:#f4a722;
+  --mvm-radius:14px;
+  --mvm-shadow:0 8px 24px rgba(23,32,42,.07);
+}
+
+/* Public MvM application roots only. Third-party component internals are not targeted. */
+:where(
+  .mvm-marketplace,
+  .mvm-offers,
+  .mvm-ad-examples,
+  .mvm-events-v1,
+  .mvm-public-home,
+  .mvm-home-ads,
+  .mvm-personalized-feed,
+  .mvm-newsletter,
+  .mvm-entrepreneur-portal,
+  .mvm-entrepreneur-ads,
+  .mvm-ad-settings
+){
+  color:var(--mvm-ink);
+  -webkit-text-fill-color:var(--mvm-ink);
+}
+
+:where(.mvm-marketplace,.mvm-offers,.mvm-ad-examples,.mvm-newsletter,.mvm-entrepreneur-portal,.mvm-ad-settings){
+  width:min(100% - 28px,1152px);
+  margin-inline:auto;
+  box-sizing:border-box;
+}
+
+:where(.mvm-marketplace,.mvm-offers,.mvm-ad-examples,.mvm-newsletter,.mvm-entrepreneur-portal,.mvm-ad-settings)
+:where([class$="__hero"],[class*="__hero "]){
+  background:linear-gradient(135deg,var(--mvm-brand) 0%,var(--mvm-brand-dark) 100%);
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  border-radius:var(--mvm-radius);
+  border:0;
+  box-shadow:0 10px 28px rgba(18,79,136,.18);
+}
+
+:where(.mvm-marketplace,.mvm-offers,.mvm-ad-examples,.mvm-newsletter,.mvm-entrepreneur-portal,.mvm-ad-settings)
+:where([class$="__hero"],[class*="__hero "]) *{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+
+:where(
+  .mvm-marketplace,
+  .mvm-offers,
+  .mvm-ad-examples,
+  .mvm-events-v1,
+  .mvm-home-ads,
+  .mvm-personalized-feed,
+  .mvm-newsletter,
+  .mvm-entrepreneur-portal,
+  .mvm-entrepreneur-ads,
+  .mvm-ad-settings
+)
+:where([class$="__card"],[class*="__card "],[class$="__content"],[class*="__content "],[class$="__empty"],[class*="__empty "]){
+  background:var(--mvm-surface);
+  color:var(--mvm-ink);
+  -webkit-text-fill-color:var(--mvm-ink);
+  border-color:var(--mvm-border);
+  border-radius:var(--mvm-radius);
+  box-shadow:var(--mvm-shadow);
+}
+
+:where(
+  .mvm-marketplace,
+  .mvm-offers,
+  .mvm-ad-examples,
+  .mvm-events-v1,
+  .mvm-home-ads,
+  .mvm-personalized-feed,
+  .mvm-newsletter,
+  .mvm-entrepreneur-portal,
+  .mvm-entrepreneur-ads,
+  .mvm-ad-settings
+) :where(h1,h2,h3,h4,p,li,label,summary,dt,dd){
+  text-transform:none;
+}
+
+:where(
+  .mvm-marketplace,
+  .mvm-offers,
+  .mvm-ad-examples,
+  .mvm-events-v1,
+  .mvm-home-ads,
+  .mvm-personalized-feed,
+  .mvm-newsletter,
+  .mvm-entrepreneur-portal,
+  .mvm-entrepreneur-ads,
+  .mvm-ad-settings
+) a:not([class*="ps-"]):not([class*="wpforo"]):not([class*="um-"]){
+  color:var(--mvm-brand);
+  -webkit-text-fill-color:var(--mvm-brand);
+}
+
+:where(
+  .mvm-marketplace,
+  .mvm-offers,
+  .mvm-ad-examples,
+  .mvm-events-v1,
+  .mvm-newsletter,
+  .mvm-entrepreneur-portal,
+  .mvm-entrepreneur-ads,
+  .mvm-ad-settings
+)
+:where(button,.button,[class$="__button"],[class*="__button "],[class$="__cta"],[class*="__cta "]):not(.mvm-local-ad__cta--demo){
+  background:var(--mvm-brand);
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  border-color:var(--mvm-brand);
+  border-radius:9px;
+  font-weight:700;
+}
+
+:where(
+  .mvm-marketplace,
+  .mvm-offers,
+  .mvm-ad-examples,
+  .mvm-events-v1,
+  .mvm-newsletter,
+  .mvm-entrepreneur-portal,
+  .mvm-entrepreneur-ads,
+  .mvm-ad-settings
+) :where(input,select,textarea){
+  background:#fff;
+  color:var(--mvm-ink);
+  -webkit-text-fill-color:var(--mvm-ink);
+  border-color:var(--mvm-border);
+  border-radius:9px;
+}
+
+:where(
+  .mvm-marketplace,
+  .mvm-offers,
+  .mvm-ad-examples,
+  .mvm-events-v1,
+  .mvm-public-home,
+  .mvm-home-ads,
+  .mvm-personalized-feed,
+  .mvm-newsletter,
+  .mvm-entrepreneur-portal,
+  .mvm-entrepreneur-ads,
+  .mvm-ad-settings
+) :where(a,button,input,select,textarea,summary):focus-visible{
+  outline:3px solid var(--mvm-focus);
+  outline-offset:3px;
+}
+
+/* Local ad units keep editorial-commercial separation but use the same MvM palette. */
+.mvm-local-ad__card{
+  background:#fff;
+  color:var(--mvm-ink);
+  -webkit-text-fill-color:var(--mvm-ink);
+  border-color:var(--mvm-border);
+  border-radius:12px;
+  box-shadow:var(--mvm-shadow);
+}
+.mvm-local-ad__label,.mvm-local-ad__advertiser{
+  color:var(--mvm-muted);
+  -webkit-text-fill-color:var(--mvm-muted);
+}
+.mvm-local-ad__headline,.mvm-local-ad__text{
+  color:var(--mvm-ink);
+  -webkit-text-fill-color:var(--mvm-ink);
+}
+.mvm-local-ad__cta{
+  background:var(--mvm-brand);
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  border-radius:8px;
+}
+
+/* Encyclopedia index: no nested scroll area, therefore no stale scroll instruction. */
+.mvm-public-home .mvm-scroll-hint{
+  display:none!important;
+}
+
+/* Encyclopedia dossier pages: same width and blue MvM hero as the landing page. */
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) main.single-class>.container-fluid{
+  width:min(100% - 28px,1152px)!important;
+  margin-inline:auto!important;
+  padding-inline:0!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mg-blog-post-box.single>.mg-header{
+  margin:0 0 24px!important;
+  padding:clamp(24px,4vw,42px)!important;
+  background:linear-gradient(135deg,#1966AE 0%,#124f88 100%)!important;
+  border:0!important;
+  border-radius:16px!important;
+  box-shadow:0 10px 28px rgba(18,79,136,.18)!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mg-blog-post-box.single>.mg-header :where(h1,h2,p,span,a,time,strong,i){
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  text-transform:none!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mg-blog-thumb{
+  margin:0 0 24px!important;
+  padding:12px!important;
+  background:#eef3f8!important;
+  border:1px solid #d2dee8!important;
+  border-radius:14px!important;
+  overflow:hidden!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mg-blog-thumb img{
+  display:block!important;
+  width:auto!important;
+  max-width:100%!important;
+  max-height:540px!important;
+  margin-inline:auto!important;
+  object-fit:contain!important;
+  border-radius:10px!important;
+}
+
+body.mvm-header-dark :where(.mvm-marketplace,.mvm-offers,.mvm-ad-examples,.mvm-events-v1,.mvm-home-ads,.mvm-personalized-feed,.mvm-newsletter,.mvm-entrepreneur-portal,.mvm-entrepreneur-ads,.mvm-ad-settings),
+html[data-theme="dark"] :where(.mvm-marketplace,.mvm-offers,.mvm-ad-examples,.mvm-events-v1,.mvm-home-ads,.mvm-personalized-feed,.mvm-newsletter,.mvm-entrepreneur-portal,.mvm-entrepreneur-ads,.mvm-ad-settings){
+  --mvm-ink:#f5f7fa;
+  --mvm-muted:#c2d0dc;
+  --mvm-surface:#17222d;
+  --mvm-soft:#253442;
+  --mvm-border:#42576a;
+  color:var(--mvm-ink);
+  -webkit-text-fill-color:var(--mvm-ink);
+}
+
+body.mvm-header-dark :where(.mvm-marketplace,.mvm-offers,.mvm-ad-examples,.mvm-events-v1,.mvm-home-ads,.mvm-personalized-feed,.mvm-newsletter,.mvm-entrepreneur-portal,.mvm-entrepreneur-ads,.mvm-ad-settings)
+:where([class$="__card"],[class*="__card "],[class$="__content"],[class*="__content "],[class$="__empty"],[class*="__empty "]),
+html[data-theme="dark"] :where(.mvm-marketplace,.mvm-offers,.mvm-ad-examples,.mvm-events-v1,.mvm-home-ads,.mvm-personalized-feed,.mvm-newsletter,.mvm-entrepreneur-portal,.mvm-entrepreneur-ads,.mvm-ad-settings)
+:where([class$="__card"],[class*="__card "],[class$="__content"],[class*="__content "],[class$="__empty"],[class*="__empty "]),
+body.mvm-header-dark .mvm-local-ad__card,
+html[data-theme="dark"] .mvm-local-ad__card{
+  background:#17222d;
+  color:#f5f7fa;
+  -webkit-text-fill-color:#f5f7fa;
+  border-color:#42576a;
+}
+
+body.mvm-header-dark :where(.mvm-local-ad__headline,.mvm-local-ad__text),
+html[data-theme="dark"] :where(.mvm-local-ad__headline,.mvm-local-ad__text){
+  color:#f5f7fa;
+  -webkit-text-fill-color:#f5f7fa;
+}
+body.mvm-header-dark :where(.mvm-local-ad__label,.mvm-local-ad__advertiser),
+html[data-theme="dark"] :where(.mvm-local-ad__label,.mvm-local-ad__advertiser){
+  color:#c2d0dc;
+  -webkit-text-fill-color:#c2d0dc;
+}
+
+@media(max-width:767px){
+  :where(.mvm-marketplace,.mvm-offers,.mvm-ad-examples,.mvm-newsletter,.mvm-entrepreneur-portal,.mvm-ad-settings){
+    width:min(100% - 20px,1152px);
+  }
+  :is(
+    body.single-mvm_encyclopedie,
+    body.single-mvm_persoon,
+    body.single-mvm_locatie,
+    body.single-mvm_gebouw,
+    body.single-mvm_gebeurtenis,
+    body.single-mvm_vereniging,
+    body.single-mvm_bedrijf,
+    body.single-mvm_beeld,
+    body.single-mvm_bron
+  ) main.single-class>.container-fluid{
+    width:min(100% - 20px,1152px)!important;
+  }
+  :is(
+    body.single-mvm_encyclopedie,
+    body.single-mvm_persoon,
+    body.single-mvm_locatie,
+    body.single-mvm_gebouw,
+    body.single-mvm_gebeurtenis,
+    body.single-mvm_vereniging,
+    body.single-mvm_bedrijf,
+    body.single-mvm_beeld,
+    body.single-mvm_bron
+  ) .mg-blog-post-box.single>.mg-header{
+    padding:22px 18px!important;
+    border-radius:12px!important;
+  }
+  :is(
+    body.single-mvm_encyclopedie,
+    body.single-mvm_persoon,
+    body.single-mvm_locatie,
+    body.single-mvm_gebouw,
+    body.single-mvm_gebeurtenis,
+    body.single-mvm_vereniging,
+    body.single-mvm_bedrijf,
+    body.single-mvm_beeld,
+    body.single-mvm_bron
+  ) .mg-blog-thumb img{
+    max-height:420px!important;
+  }
+}

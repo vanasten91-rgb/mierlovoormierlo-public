@@ -1,0 +1,88 @@
+/* Keep the Hub sidebar and workflow help readable without nested scrollbars. */
+.mvm-hub4__app {
+    width: 100%;
+    grid-template-columns: minmax(260px, 260px) minmax(0, 1fr);
+}
+
+.mvm-hub4__sidebar {
+    width: 260px;
+    min-width: 260px;
+    max-width: 260px;
+    min-inline-size: 260px;
+    max-inline-size: 260px;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+}
+
+.mvm-hub4__sidebar > *,
+.mvm-hub4__workflow-guide summary > span:first-child,
+.mvm-hub4__workflow-guide-body,
+.mvm-hub4__workflow-columns,
+.mvm-hub4__workflow-columns > section {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.mvm-hub4__brand-text,
+.mvm-hub4__nav,
+.mvm-hub4__sidebar-footer {
+    width: 100%;
+    min-width: 0;
+}
+
+.mvm-hub4__brand-text strong,
+.mvm-hub4__brand-text span,
+.mvm-hub4__nav-item,
+.mvm-hub4__sidebar-footer a,
+.mvm-hub4__workflow-guide summary strong,
+.mvm-hub4__workflow-guide summary small,
+.mvm-hub4__workflow-guide-body,
+.mvm-hub4__workflow-columns li {
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: auto;
+    white-space: normal;
+    writing-mode: horizontal-tb;
+}
+
+@media (max-width: 900px) {
+    .mvm-hub4__app {
+        display: block;
+    }
+
+    .mvm-hub4__sidebar {
+        position: relative;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        min-inline-size: 0;
+        max-inline-size: none;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    .mvm-hub4__nav {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+        gap: 6px;
+        overflow: visible;
+    }
+
+    .mvm-hub4__nav-item {
+        width: 100%;
+        min-width: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 620px) {
+    .mvm-hub4__workflow-guide summary {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .mvm-hub4__workflow-guide summary > span:last-child {
+        flex: 0 0 28px;
+    }
+}

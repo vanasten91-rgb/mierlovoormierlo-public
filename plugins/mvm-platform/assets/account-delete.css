@@ -1,0 +1,62 @@
+.mvm-account-delete {
+  --mvm-blue: #1966ae;
+  --mvm-ink: #17222d;
+  --mvm-danger: #a52422;
+  margin: 28px 0;
+}
+
+.mvm-account-delete__card {
+  background: #fff;
+  border: 1px solid #d5e0e9;
+  border-top: 4px solid var(--mvm-danger);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(23, 34, 45, 0.08);
+  color: var(--mvm-ink);
+  padding: clamp(20px, 4vw, 32px);
+}
+
+.mvm-account-delete__eyebrow {
+  color: var(--mvm-blue);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.mvm-account-delete h2 { margin-top: 0; }
+
+.mvm-account-delete__warning {
+  background: #fff5f2;
+  border-left: 4px solid var(--mvm-danger);
+  border-radius: 6px;
+  margin: 18px 0;
+  padding: 12px 14px;
+}
+
+.mvm-account-delete__form { max-width: 540px; }
+.mvm-account-delete__form > label:first-of-type { display: block; font-weight: 700; margin-bottom: 6px; }
+.mvm-account-delete__form input[type="password"] {
+  border: 1px solid #92a7ba;
+  border-radius: 8px;
+  box-sizing: border-box;
+  min-height: 46px;
+  padding: 9px 12px;
+  width: 100%;
+}
+.mvm-account-delete__form input:focus-visible,
+.mvm-account-delete__button:focus-visible { outline: 3px solid #f5c842; outline-offset: 2px; }
+.mvm-account-delete__confirm { align-items: flex-start; display: flex; gap: 9px; margin: 16px 0; }
+.mvm-account-delete__confirm input { margin-top: 4px; }
+.mvm-account-delete__status { min-height: 1.5em; }
+.mvm-account-delete__button {
+  background: var(--mvm-danger);
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 800;
+  padding: 12px 18px;
+}
+.mvm-account-delete__button:hover { background: #7f1b1a; }
+.mvm-account-delete__button:disabled { cursor: wait; opacity: 0.65; }

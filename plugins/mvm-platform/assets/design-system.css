@@ -1,0 +1,400 @@
+/*
+ * MvM Design System
+ * Canonical visual contract for Mierlo voor Mierlo owned interfaces.
+ *
+ * Architecture:
+ * 1. Global semantic tokens.
+ * 2. Reusable MvM primitives.
+ * 3. Narrow adapters for existing MvM/PeepSo components during migration.
+ *
+ * Component plugins may add semantic classes, but must not redefine the token
+ * palette locally. New large inline style blocks are not part of the contract.
+ */
+
+:root {
+    /* Brand */
+    --mvm-color-brand-500: #2380c8;
+    --mvm-color-brand-600: #1966ae;
+    --mvm-color-brand-700: #0b4d96;
+    --mvm-color-brand-800: #083b78;
+    --mvm-color-sky-500: #3ec9f2;
+
+    /* Semantic light theme */
+    --mvm-color-canvas: #ffffff;
+    --mvm-color-surface: #ffffff;
+    --mvm-color-surface-subtle: #f6f9fc;
+    --mvm-color-surface-muted: #eef3f8;
+    --mvm-color-surface-accent: #eaf4fc;
+    --mvm-color-text: #112b50;
+    --mvm-color-text-body: #415875;
+    --mvm-color-text-muted: #6c7d93;
+    --mvm-color-border: #d7e1ec;
+    --mvm-color-border-strong: #b8c9da;
+    --mvm-color-danger: #b42318;
+    --mvm-color-danger-surface: #fff6f7;
+    --mvm-color-danger-border: #f0c9ce;
+    --mvm-color-success: #176b45;
+    --mvm-color-success-surface: #edf8f3;
+    --mvm-color-on-brand: #ffffff;
+    --mvm-focus-ring: rgba(25, 102, 174, .16);
+
+    /* Typography: inherit the site's configured body font; editorial headings
+       retain the established MvM serif voice without requiring a webfont. */
+    --mvm-font-body: var(--wp--preset--font-family--body, inherit);
+    --mvm-font-display: Georgia, Cambria, "Times New Roman", serif;
+    --mvm-font-size-xs: .8125rem;
+    --mvm-font-size-sm: .875rem;
+    --mvm-font-size-md: 1rem;
+    --mvm-font-size-lg: 1.125rem;
+    --mvm-font-size-xl: clamp(1.75rem, 3vw, 2.5rem);
+    --mvm-line-height-tight: 1.12;
+    --mvm-line-height-body: 1.6;
+
+    /* Spacing */
+    --mvm-space-1: .25rem;
+    --mvm-space-2: .5rem;
+    --mvm-space-3: .75rem;
+    --mvm-space-4: 1rem;
+    --mvm-space-5: 1.25rem;
+    --mvm-space-6: 1.5rem;
+    --mvm-space-8: 2rem;
+    --mvm-space-10: 2.5rem;
+    --mvm-space-12: 3rem;
+    --mvm-space-16: 4rem;
+
+    /* Shape */
+    --mvm-radius-sm: .5rem;
+    --mvm-radius-md: .6875rem;
+    --mvm-radius-lg: 1.125rem;
+    --mvm-radius-xl: 1.5rem;
+    --mvm-radius-2xl: 1.875rem;
+    --mvm-radius-pill: 999px;
+
+    /* Elevation */
+    --mvm-shadow-sm: 0 1px 2px rgba(17, 43, 80, .04);
+    --mvm-shadow-md: 0 8px 20px rgba(25, 102, 174, .18);
+    --mvm-shadow-card: 0 18px 52px rgba(17, 55, 92, .10);
+    --mvm-shadow-popover: 0 18px 46px rgba(13, 55, 96, .18);
+
+    /* Motion */
+    --mvm-motion-fast: 160ms;
+    --mvm-motion-normal: 220ms;
+    --mvm-ease-standard: cubic-bezier(.2, .8, .2, 1);
+
+    color-scheme: light;
+}
+
+html[data-theme="dark"],
+body.mvm-dark,
+body.dark {
+    --mvm-color-canvas: #0f1e2e;
+    --mvm-color-surface: #172a3e;
+    --mvm-color-surface-subtle: #13263a;
+    --mvm-color-surface-muted: #1d3349;
+    --mvm-color-surface-accent: #173b5b;
+    --mvm-color-text: #ffffff;
+    --mvm-color-text-body: #d8e5f0;
+    --mvm-color-text-muted: #adc0d1;
+    --mvm-color-border: #29445f;
+    --mvm-color-border-strong: #45627d;
+    --mvm-color-danger: #ffadb5;
+    --mvm-color-danger-surface: #3a2028;
+    --mvm-color-danger-border: #73404a;
+    --mvm-color-success: #8be1b8;
+    --mvm-color-success-surface: #18372c;
+    --mvm-focus-ring: rgba(62, 201, 242, .28);
+    --mvm-shadow-sm: 0 1px 2px rgba(0, 0, 0, .22);
+    --mvm-shadow-card: 0 18px 52px rgba(0, 0, 0, .24);
+    --mvm-shadow-popover: 0 18px 46px rgba(0, 0, 0, .30);
+    color-scheme: dark;
+}
+
+/* -------------------------------------------------------------------------
+ * Primitives
+ * ---------------------------------------------------------------------- */
+
+.mvm-ui-surface,
+.mvm-ui-card {
+    background: var(--mvm-color-surface);
+    color: var(--mvm-color-text-body);
+    border: 1px solid var(--mvm-color-border);
+}
+
+.mvm-ui-card {
+    border-radius: var(--mvm-radius-xl);
+    box-shadow: var(--mvm-shadow-card);
+}
+
+.mvm-ui-heading {
+    margin: 0;
+    color: var(--mvm-color-text);
+    font-family: var(--mvm-font-display);
+    font-size: var(--mvm-font-size-xl);
+    font-weight: 700;
+    line-height: var(--mvm-line-height-tight);
+    letter-spacing: -.02em;
+    text-transform: none;
+}
+
+.mvm-ui-eyebrow {
+    margin: 0 0 var(--mvm-space-3);
+    color: var(--mvm-color-brand-600);
+    font-family: var(--mvm-font-body);
+    font-size: var(--mvm-font-size-xs);
+    font-weight: 800;
+    letter-spacing: .16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.mvm-ui-body {
+    color: var(--mvm-color-text-body);
+    font-family: var(--mvm-font-body);
+    line-height: var(--mvm-line-height-body);
+}
+
+.mvm-ui-button,
+.mvm-ui-button:visited {
+    display: inline-flex;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: center;
+    gap: var(--mvm-space-2);
+    padding: .75rem 1.25rem;
+    border: 1px solid var(--mvm-color-brand-600);
+    border-radius: var(--mvm-radius-md);
+    background: var(--mvm-color-brand-600);
+    color: var(--mvm-color-on-brand);
+    box-shadow: var(--mvm-shadow-md);
+    font-family: var(--mvm-font-body);
+    font-size: var(--mvm-font-size-md);
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background-color var(--mvm-motion-fast) var(--mvm-ease-standard),
+                border-color var(--mvm-motion-fast) var(--mvm-ease-standard),
+                box-shadow var(--mvm-motion-fast) var(--mvm-ease-standard),
+                transform var(--mvm-motion-fast) var(--mvm-ease-standard);
+}
+
+.mvm-ui-button:hover,
+.mvm-ui-button:focus-visible {
+    border-color: var(--mvm-color-brand-700);
+    background: var(--mvm-color-brand-700);
+    color: var(--mvm-color-on-brand);
+    transform: translateY(-1px);
+}
+
+.mvm-ui-button--secondary,
+.mvm-ui-button--secondary:visited {
+    border-color: var(--mvm-color-border-strong);
+    background: var(--mvm-color-surface);
+    color: var(--mvm-color-brand-600);
+    box-shadow: none;
+}
+
+.mvm-ui-button--secondary:hover,
+.mvm-ui-button--secondary:focus-visible {
+    border-color: var(--mvm-color-brand-600);
+    background: var(--mvm-color-surface-accent);
+    color: var(--mvm-color-brand-700);
+}
+
+.mvm-ui-input,
+.mvm-ui-select,
+.mvm-ui-textarea {
+    width: 100%;
+    min-height: 3.375rem;
+    border: 1px solid var(--mvm-color-border);
+    border-radius: var(--mvm-radius-md);
+    background: var(--mvm-color-surface);
+    color: var(--mvm-color-text);
+    box-shadow: var(--mvm-shadow-sm);
+    font: inherit;
+    transition: border-color var(--mvm-motion-fast) var(--mvm-ease-standard),
+                box-shadow var(--mvm-motion-fast) var(--mvm-ease-standard),
+                background-color var(--mvm-motion-fast) var(--mvm-ease-standard);
+}
+
+.mvm-ui-input,
+.mvm-ui-select {
+    padding: 0 var(--mvm-space-4);
+}
+
+.mvm-ui-textarea {
+    min-height: 8rem;
+    padding: var(--mvm-space-4);
+}
+
+.mvm-ui-input::placeholder,
+.mvm-ui-textarea::placeholder {
+    color: var(--mvm-color-text-muted);
+    opacity: 1;
+}
+
+.mvm-ui-input:hover,
+.mvm-ui-select:hover,
+.mvm-ui-textarea:hover {
+    border-color: var(--mvm-color-border-strong);
+}
+
+.mvm-ui-input:focus,
+.mvm-ui-select:focus,
+.mvm-ui-textarea:focus {
+    border-color: var(--mvm-color-brand-600);
+    outline: 0;
+    box-shadow: 0 0 0 4px var(--mvm-focus-ring);
+}
+
+.mvm-ui-notice {
+    padding: var(--mvm-space-3) var(--mvm-space-4);
+    border: 1px solid var(--mvm-color-border);
+    border-left: 4px solid var(--mvm-color-brand-600);
+    border-radius: var(--mvm-radius-md);
+    background: var(--mvm-color-surface-accent);
+    color: var(--mvm-color-text-body);
+    line-height: 1.5;
+}
+
+.mvm-ui-notice--danger {
+    border-color: var(--mvm-color-danger-border);
+    border-left-color: var(--mvm-color-danger);
+    background: var(--mvm-color-danger-surface);
+    color: var(--mvm-color-danger);
+}
+
+:where(.mvm-ui-button, .mvm-ui-input, .mvm-ui-select, .mvm-ui-textarea, .mvm-ui-card, a, button, input, select, textarea):focus-visible {
+    outline: 3px solid var(--mvm-color-sky-500);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :where(.mvm-ui-button, .mvm-ui-input, .mvm-ui-select, .mvm-ui-textarea) {
+        scroll-behavior: auto;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* -------------------------------------------------------------------------
+ * Current MvM app adapters
+ * These selectors map existing modules onto semantic tokens. They are
+ * transitional and can shrink as markup adopts the mvm-ui-* primitives.
+ * ---------------------------------------------------------------------- */
+
+:where(.mvm-marketplace, .mvm-newsletter, .mvm-offers, .mvm-entrepreneur, .mvm-local-ad) {
+    --mvm-ui-blue: var(--mvm-color-brand-600);
+    --mvm-ui-blue-dark: var(--mvm-color-brand-700);
+    --mvm-ui-white: var(--mvm-color-surface);
+    --mvm-ui-grey: var(--mvm-color-surface-muted);
+    --mvm-ui-grey-2: var(--mvm-color-surface-subtle);
+    --mvm-ui-black: var(--mvm-color-text);
+    --mvm-ui-border: var(--mvm-color-border);
+    color: var(--mvm-color-text-body);
+}
+
+:where(.mvm-marketplace, .mvm-newsletter, .mvm-offers, .mvm-entrepreneur) :where(
+    .mvm-marketplace__panel,
+    .mvm-marketplace__card,
+    .mvm-marketplace__form,
+    .mvm-newsletter__panel,
+    .mvm-newsletter__card,
+    .mvm-newsletter__form,
+    .mvm-offers__card,
+    .mvm-offers__panel,
+    .mvm-entrepreneur__hero,
+    .mvm-entrepreneur__panel
+) {
+    background: var(--mvm-color-surface) !important;
+    color: var(--mvm-color-text-body) !important;
+    border-color: var(--mvm-color-border) !important;
+}
+
+:where(.mvm-marketplace, .mvm-newsletter, .mvm-offers, .mvm-entrepreneur) :where(
+    .mvm-marketplace__meta,
+    .mvm-marketplace__filters,
+    .mvm-marketplace__empty,
+    .mvm-marketplace__notice,
+    .mvm-newsletter__notice,
+    .mvm-newsletter__topics,
+    .mvm-newsletter__status,
+    .mvm-offers__empty,
+    .mvm-offers__meta,
+    .mvm-entrepreneur__account,
+    .mvm-entrepreneur__placement,
+    .mvm-entrepreneur__ad,
+    .mvm-entrepreneur__empty
+) {
+    background: var(--mvm-color-surface-muted) !important;
+    color: var(--mvm-color-text-body) !important;
+    border-color: var(--mvm-color-border) !important;
+}
+
+:where(.mvm-marketplace, .mvm-newsletter, .mvm-offers, .mvm-entrepreneur, .mvm-local-ad) :where(
+    .mvm-marketplace__hero,
+    .mvm-marketplace__primary,
+    .mvm-newsletter__hero,
+    .mvm-newsletter__primary,
+    .mvm-offers__hero,
+    .mvm-offers__cta,
+    .mvm-entrepreneur__primary,
+    .mvm-local-ad__label,
+    .mvm-local-ad__cta
+) {
+    background: var(--mvm-color-brand-600) !important;
+    color: var(--mvm-color-on-brand) !important;
+    border-color: var(--mvm-color-brand-600) !important;
+}
+
+:where(.mvm-marketplace, .mvm-newsletter, .mvm-offers, .mvm-entrepreneur, .mvm-local-ad) :where(
+    .mvm-marketplace__hero,
+    .mvm-marketplace__primary,
+    .mvm-newsletter__hero,
+    .mvm-newsletter__primary,
+    .mvm-offers__hero,
+    .mvm-offers__cta,
+    .mvm-entrepreneur__primary,
+    .mvm-local-ad__label,
+    .mvm-local-ad__cta
+) :where(h1, h2, h3, h4, p, small, strong, span) {
+    color: var(--mvm-color-on-brand) !important;
+}
+
+:where(.mvm-marketplace, .mvm-newsletter, .mvm-offers, .mvm-entrepreneur) :where(input, select, textarea) {
+    background: var(--mvm-color-surface) !important;
+    color: var(--mvm-color-text) !important;
+    border-color: var(--mvm-color-border-strong) !important;
+}
+
+:where(.mvm-marketplace, .mvm-newsletter, .mvm-offers, .mvm-entrepreneur) :where(input, textarea)::placeholder {
+    color: var(--mvm-color-text-muted) !important;
+    opacity: 1;
+}
+
+/* PeepSo/account migration adapters. Existing snippets remain authoritative
+   until their PHP and page-specific layout rules are moved into modules. */
+#mvm-header-account,
+body.page-id-1199,
+body.page-id-1200,
+body.page-id-1201 {
+    --mvm-account-blue: var(--mvm-color-brand-600);
+    --mvm-account-blue-dark: var(--mvm-color-brand-700);
+    --mvm-account-ink: var(--mvm-color-text);
+    --mvm-account-text: var(--mvm-color-text-body);
+    --mvm-account-muted: var(--mvm-color-text-muted);
+    --mvm-account-border: var(--mvm-color-border);
+    --mvm-account-soft: var(--mvm-color-surface-subtle);
+}
+
+/* Remove the need for the JS hover hard-fix once the homepage component is
+   migrated: this state is intentionally strong enough for normal CSS cascade. */
+body.home .mvm-gm-lab a.mvm-gm-cta:hover,
+body.home .mvm-gm-lab a.mvm-gm-cta:focus,
+body.home .mvm-gm-lab a.mvm-gm-cta:focus-visible {
+    background: var(--mvm-color-brand-700) !important;
+    border-color: var(--mvm-color-brand-700) !important;
+    color: var(--mvm-color-on-brand) !important;
+    -webkit-text-fill-color: var(--mvm-color-on-brand) !important;
+    text-shadow: none !important;
+}

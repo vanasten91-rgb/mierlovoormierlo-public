@@ -1,0 +1,38 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+wp-config.php
+auth.json
+credentials.json
+secrets.*
+
+# Private/runtime data
+private-storage/
+runtime-private/
+uploads/
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.dump
+*.bak
+*.backup
+
+# Dependencies and generated output
+node_modules/
+vendor/
+coverage/
+dist/
+build/
+*.zip
+*.tar
+*.tar.gz
+*.sha256
+.phpunit.result.cache
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

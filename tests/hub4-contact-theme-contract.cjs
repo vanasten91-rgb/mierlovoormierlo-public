@@ -1,0 +1,14 @@
+'use strict';
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const root = path.resolve(__dirname, '..', 'plugins', 'mvm-hub4-rc-direct');
+const main = fs.readFileSync(path.join(root, 'mvm-hub4.php'), 'utf8');
+const css = fs.readFileSync(path.join(root, 'src', 'class-contact-theme.php'), 'utf8');
+assert.ok(main.includes("src/class-contact-theme.php"), 'Contact theme must be loaded by Hub 1.1.');
+assert.ok(main.includes('MvM_Hub4_Contact_Theme::init();'), 'Contact theme must boot with Hub 1.1.');
+assert.ok(css.includes('CONTACT_PAGE_ID = 140'), 'Contact guard must remain scoped to page 140.');
+assert.ok(css.includes('.elementor-element-c0a1b2c3'), 'Contact guard must target the blue hero container only.');
+assert.ok(css.includes('color:#fff!important') && css.includes('-webkit-text-fill-color:#fff!important'), 'Contact hero copy must be explicitly white across browsers.');
+assert.ok(!/wp_update_post|update_post_meta|update_option|innerHTML|eval\s*\(/.test(css), 'Contact theme must remain presentation-only.');
+console.log('Hub contact theme contract: 6 assertions passed.');

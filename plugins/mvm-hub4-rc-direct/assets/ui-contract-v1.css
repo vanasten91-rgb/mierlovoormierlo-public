@@ -1,0 +1,163 @@
+/* Hub 1.1 high-contrast visual contract.
+ * Blue = white text. White = black text. Light grey = black text.
+ * Deliberately scoped to the MvM Hub; third-party apps remain untouched.
+ */
+
+body.mvm-hub4,
+.mvm-hub4 {
+    --blue: #1966AE !important;
+    --blue-dark: #124f88 !important;
+    --blue-soft: #eef3f8 !important;
+    --surface: #ffffff !important;
+    --surface-alt: #eef3f8 !important;
+    --border: #c5d3df !important;
+    --text: #111111 !important;
+    --muted: #111111 !important;
+    --mvm-hub4-text: #111111 !important;
+    --mvm-hub4-muted: #111111 !important;
+    --mvm-hub4-surface: #ffffff !important;
+    --mvm-hub4-soft: #eef3f8 !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+    color-scheme: light !important;
+}
+
+/* White content surfaces: black text. */
+.mvm-hub4 :where(
+    .mvm-hub4__topbar,
+    .mvm-hub4__card,
+    .mvm-hub4__filters,
+    .mvm-hub4__toolbar,
+    .mvm-hub4__table-wrap,
+    .mvm-hub4__loading,
+    .mvm-hub4__status:not(:empty),
+    .mvm-hub4__platform-card,
+    .mvm-hub4__platform-row,
+    .mvm-hub4__platform-table,
+    .mvm-news-radar__metric,
+    .mvm-news-radar__card,
+    .mvm-news-radar__sources
+) {
+    background: #ffffff !important;
+    color: #111111 !important;
+    border-color: #c5d3df !important;
+}
+
+/* Light-grey cards/secondary blocks: black text. */
+.mvm-hub4 :where(
+    .mvm-hub4__empty,
+    .mvm-hub4__platform-form,
+    .mvm-hub4__platform-empty,
+    .mvm-news-radar__source-card,
+    .mvm-news-radar__update,
+    .mvm-news-radar__badge,
+    .mvm-hub4__badge
+) {
+    background: #eef3f8 !important;
+    color: #111111 !important;
+    border-color: #c5d3df !important;
+}
+
+/* Keep all normal copy black on white/grey surfaces, including secondary text. */
+.mvm-hub4 :where(
+    .mvm-hub4__topbar,
+    .mvm-hub4__card:not(.mvm-hub4__card--blue),
+    .mvm-hub4__filters,
+    .mvm-hub4__toolbar,
+    .mvm-hub4__table-wrap,
+    .mvm-hub4__empty,
+    .mvm-hub4__loading,
+    .mvm-hub4__platform-card,
+    .mvm-hub4__platform-row,
+    .mvm-hub4__platform-form,
+    .mvm-news-radar__metric,
+    .mvm-news-radar__card,
+    .mvm-news-radar__sources,
+    .mvm-news-radar__source-card,
+    .mvm-news-radar__update
+) :where(h1,h2,h3,h4,h5,h6,p,small,strong,span,label,legend,dt,dd,li,td) {
+    color: #111111 !important;
+}
+
+/* Brand-blue surfaces: white text, without exception. */
+.mvm-hub4 :where(
+    .mvm-hub4__sidebar,
+    .mvm-hub4__card--blue,
+    .mvm-hub4__button:not(.mvm-hub4__button--secondary),
+    .mvm-hub4__platform-button:not(.mvm-hub4__platform-button--secondary),
+    .mvm-news-radar__review-button,
+    .mvm-hub4__table th
+) {
+    background: #1966AE !important;
+    color: #ffffff !important;
+    border-color: #1966AE !important;
+}
+
+.mvm-hub4 :where(
+    .mvm-hub4__sidebar,
+    .mvm-hub4__card--blue,
+    .mvm-hub4__button:not(.mvm-hub4__button--secondary),
+    .mvm-hub4__platform-button:not(.mvm-hub4__platform-button--secondary),
+    .mvm-news-radar__review-button,
+    .mvm-hub4__table th
+) :where(h1,h2,h3,h4,p,small,strong,span,a) {
+    color: #ffffff !important;
+}
+
+.mvm-hub4 .mvm-hub4__nav-item {
+    color: #ffffff !important;
+}
+
+.mvm-hub4 .mvm-hub4__nav-item.is-active {
+    background: #ffffff !important;
+    color: #111111 !important;
+    border-color: #ffffff !important;
+}
+
+.mvm-hub4 .mvm-hub4__sidebar-footer a,
+.mvm-hub4 .mvm-hub4__brand-text,
+.mvm-hub4 .mvm-hub4__brand-text strong,
+.mvm-hub4 .mvm-hub4__brand-text span {
+    color: #ffffff !important;
+}
+
+/* Secondary buttons stay white with black text; hover may use grey, never low contrast. */
+.mvm-hub4 :where(.mvm-hub4__button--secondary, .mvm-hub4__platform-button--secondary) {
+    background: #ffffff !important;
+    color: #111111 !important;
+    border-color: #1966AE !important;
+}
+
+.mvm-hub4 :where(.mvm-hub4__button--secondary, .mvm-hub4__platform-button--secondary):hover {
+    background: #eef3f8 !important;
+    color: #111111 !important;
+}
+
+/* Inputs are always white with black text. */
+.mvm-hub4 :where(input, select, textarea) {
+    background: #ffffff !important;
+    color: #111111 !important;
+    border-color: #8299ad !important;
+}
+
+.mvm-hub4 :where(input, textarea)::placeholder {
+    color: #4b5660 !important;
+    opacity: 1 !important;
+}
+
+/* OS/site dark mode must not invert the app's fixed high-contrast palette. */
+@media (prefers-color-scheme: dark) {
+    body.mvm-hub4,
+    .mvm-hub4 {
+        background: #ffffff !important;
+        color: #111111 !important;
+        color-scheme: light !important;
+    }
+}
+
+html[data-theme="dark"] body.mvm-hub4,
+body.mvm-hub4[data-theme="dark"] {
+    background: #ffffff !important;
+    color: #111111 !important;
+    color-scheme: light !important;
+}

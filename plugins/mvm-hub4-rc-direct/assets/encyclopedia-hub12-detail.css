@@ -1,0 +1,782 @@
+/* Hub 1/2 inspired detail presentation for the complete MvM encyclopedia. */
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+){
+  --mvm-ency-detail-blue:#1966AE;
+  --mvm-ency-detail-blue-dark:#124f88;
+  --mvm-ency-detail-blue-soft:#eaf3fb;
+  --mvm-ency-detail-ink:#17202a;
+  --mvm-ency-detail-muted:#526575;
+  --mvm-ency-detail-soft:#f4f7fa;
+  --mvm-ency-detail-border:#d5e0e9;
+  --mvm-ency-detail-surface:#fff;
+  --mvm-ency-detail-radius:16px;
+  --mvm-ency-detail-shadow:0 8px 24px rgba(24,49,72,.07);
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mg-blog-post-box.single > article.small.single{
+  display:grid!important;
+  gap:16px!important;
+  color:var(--mvm-ency-detail-ink)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-ink)!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) :where(
+  .mvm-dossier-breadcrumb,
+  .mvm-secondary-themes,
+  .mvm-facts-card,
+  .mvm-dossier-neighbors,
+  .mvm-anchor-toc,
+  .mvm-dossier-content,
+  .mvm-wiki-network
+){
+  margin:0!important;
+  padding:18px!important;
+  background:var(--mvm-ency-detail-surface)!important;
+  color:var(--mvm-ency-detail-ink)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-ink)!important;
+  border:1px solid var(--mvm-ency-detail-border)!important;
+  border-radius:var(--mvm-ency-detail-radius)!important;
+  box-shadow:var(--mvm-ency-detail-shadow)!important;
+  box-sizing:border-box!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-breadcrumb{
+  background:linear-gradient(90deg,var(--mvm-ency-detail-blue-soft),#fff)!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-breadcrumb .mvm-breadcrumb-heading{
+  display:block!important;
+  margin:0 0 10px!important;
+  color:var(--mvm-ency-detail-blue)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-blue)!important;
+  font-size:.82rem!important;
+  font-weight:850!important;
+  letter-spacing:.05em!important;
+  text-transform:uppercase!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-breadcrumb ol{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:8px!important;
+  margin:0!important;
+  padding:0!important;
+  list-style:none!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-breadcrumb li{
+  display:grid!important;
+  gap:2px!important;
+  min-width:0!important;
+  padding:8px 10px!important;
+  background:#fff!important;
+  border:1px solid var(--mvm-ency-detail-border)!important;
+  border-radius:10px!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-breadcrumb-level{
+  color:var(--mvm-ency-detail-muted)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-muted)!important;
+  font-size:.72rem!important;
+  font-weight:750!important;
+  text-transform:uppercase!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) :where(.mvm-dossier-breadcrumb a,.mvm-breadcrumb-current){
+  color:var(--mvm-ency-detail-blue)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-blue)!important;
+  font-weight:750!important;
+  text-decoration:none!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-secondary-themes{
+  background:var(--mvm-ency-detail-soft)!important;
+  box-shadow:none!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-secondary-themes a{
+  color:var(--mvm-ency-detail-blue)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-blue)!important;
+  font-weight:750!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-facts-card{
+  position:relative!important;
+  overflow:hidden!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-facts-card::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:5px;
+  background:var(--mvm-ency-detail-blue);
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-facts-card .mvm-eyebrow{
+  margin:0 0 12px!important;
+  color:var(--mvm-ency-detail-blue)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-blue)!important;
+  font-weight:850!important;
+  letter-spacing:.04em!important;
+  text-transform:uppercase!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-facts-card dl{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:10px!important;
+  margin:0!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-facts-card dl>div{
+  padding:12px!important;
+  background:var(--mvm-ency-detail-soft)!important;
+  border:1px solid var(--mvm-ency-detail-border)!important;
+  border-radius:11px!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-facts-card dt{
+  margin:0 0 3px!important;
+  color:var(--mvm-ency-detail-muted)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-muted)!important;
+  font-size:.8rem!important;
+  font-weight:750!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-facts-card dd{
+  margin:0!important;
+  color:var(--mvm-ency-detail-ink)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-ink)!important;
+  font-weight:750!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-neighbors>span{
+  display:block!important;
+  margin:0 0 10px!important;
+  color:var(--mvm-ency-detail-muted)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-muted)!important;
+  font-size:.82rem!important;
+  font-weight:750!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-neighbors>div{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:10px!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-neighbors a{
+  display:grid!important;
+  gap:4px!important;
+  min-height:72px!important;
+  padding:12px!important;
+  background:var(--mvm-ency-detail-soft)!important;
+  color:var(--mvm-ency-detail-ink)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-ink)!important;
+  border:1px solid var(--mvm-ency-detail-border)!important;
+  border-radius:11px!important;
+  text-decoration:none!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-neighbors a small{
+  color:var(--mvm-ency-detail-blue)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-blue)!important;
+  font-weight:800!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-anchor-toc{
+  padding:0!important;
+  overflow:hidden!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-anchor-toc details{
+  margin:0!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-anchor-toc summary{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+  padding:15px 18px!important;
+  background:linear-gradient(90deg,var(--mvm-ency-detail-blue-soft),#fff)!important;
+  color:var(--mvm-ency-detail-ink)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-ink)!important;
+  cursor:pointer!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-anchor-toc summary strong{
+  color:var(--mvm-ency-detail-blue)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-blue)!important;
+  font-size:1.05rem!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-anchor-toc ol{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:6px 18px!important;
+  margin:0!important;
+  padding:16px 20px 18px 38px!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-anchor-toc a{
+  color:var(--mvm-ency-detail-blue)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-blue)!important;
+  text-decoration:none!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-content{
+  padding:clamp(20px,3vw,30px)!important;
+  font-size:1rem!important;
+  line-height:1.72!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-content :where(h2,h3){
+  color:var(--mvm-ency-detail-ink)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-ink)!important;
+  text-transform:none!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-content h2{
+  margin:1.6em 0 .65em!important;
+  padding:0 0 8px 12px!important;
+  border-left:5px solid var(--mvm-ency-detail-blue)!important;
+  border-bottom:1px solid var(--mvm-ency-detail-border)!important;
+  font-size:clamp(1.45rem,2.6vw,2rem)!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-content h2:first-child{
+  margin-top:0!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-content h3{
+  margin:1.35em 0 .45em!important;
+  font-size:1.18rem!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-content :where(p,li){
+  color:var(--mvm-ency-detail-ink)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-ink)!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-dossier-content a{
+  color:var(--mvm-ency-detail-blue)!important;
+  -webkit-text-fill-color:var(--mvm-ency-detail-blue)!important;
+  text-decoration-thickness:1px!important;
+  text-underline-offset:2px!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) .mvm-wiki-network{
+  margin:28px 0 0!important;
+  background:var(--mvm-ency-detail-soft)!important;
+  box-shadow:none!important;
+}
+
+:is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) :where(a,summary):focus-visible{
+  outline:3px solid #f4a722!important;
+  outline-offset:3px!important;
+}
+
+body.mvm-header-dark:is(
+  .single-mvm_encyclopedie,
+  .single-mvm_persoon,
+  .single-mvm_locatie,
+  .single-mvm_gebouw,
+  .single-mvm_gebeurtenis,
+  .single-mvm_vereniging,
+  .single-mvm_bedrijf,
+  .single-mvm_beeld,
+  .single-mvm_bron
+),
+html[data-theme="dark"] :is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+){
+  --mvm-ency-detail-ink:#f5f7fa;
+  --mvm-ency-detail-muted:#c4d0db;
+  --mvm-ency-detail-soft:#202e3a;
+  --mvm-ency-detail-border:#42576a;
+  --mvm-ency-detail-surface:#17222d;
+  --mvm-ency-detail-blue-soft:#18344d;
+}
+
+html[data-theme="dark"] :is(
+  body.single-mvm_encyclopedie,
+  body.single-mvm_persoon,
+  body.single-mvm_locatie,
+  body.single-mvm_gebouw,
+  body.single-mvm_gebeurtenis,
+  body.single-mvm_vereniging,
+  body.single-mvm_bedrijf,
+  body.single-mvm_beeld,
+  body.single-mvm_bron
+) :where(.mvm-dossier-breadcrumb li,.mvm-anchor-toc summary){
+  background:#17222d!important;
+}
+
+@media(max-width:767px){
+  :is(
+    body.single-mvm_encyclopedie,
+    body.single-mvm_persoon,
+    body.single-mvm_locatie,
+    body.single-mvm_gebouw,
+    body.single-mvm_gebeurtenis,
+    body.single-mvm_vereniging,
+    body.single-mvm_bedrijf,
+    body.single-mvm_beeld,
+    body.single-mvm_bron
+  ) .mg-blog-post-box.single > article.small.single{
+    gap:12px!important;
+  }
+
+  :is(
+    body.single-mvm_encyclopedie,
+    body.single-mvm_persoon,
+    body.single-mvm_locatie,
+    body.single-mvm_gebouw,
+    body.single-mvm_gebeurtenis,
+    body.single-mvm_vereniging,
+    body.single-mvm_bedrijf,
+    body.single-mvm_beeld,
+    body.single-mvm_bron
+  ) :where(
+    .mvm-dossier-breadcrumb,
+    .mvm-secondary-themes,
+    .mvm-facts-card,
+    .mvm-dossier-neighbors,
+    .mvm-dossier-content,
+    .mvm-wiki-network
+  ){
+    padding:14px!important;
+    border-radius:13px!important;
+  }
+
+  :is(
+    body.single-mvm_encyclopedie,
+    body.single-mvm_persoon,
+    body.single-mvm_locatie,
+    body.single-mvm_gebouw,
+    body.single-mvm_gebeurtenis,
+    body.single-mvm_vereniging,
+    body.single-mvm_bedrijf,
+    body.single-mvm_beeld,
+    body.single-mvm_bron
+  ) .mvm-facts-card dl,
+  :is(
+    body.single-mvm_encyclopedie,
+    body.single-mvm_persoon,
+    body.single-mvm_locatie,
+    body.single-mvm_gebouw,
+    body.single-mvm_gebeurtenis,
+    body.single-mvm_vereniging,
+    body.single-mvm_bedrijf,
+    body.single-mvm_beeld,
+    body.single-mvm_bron
+  ) .mvm-dossier-neighbors>div,
+  :is(
+    body.single-mvm_encyclopedie,
+    body.single-mvm_persoon,
+    body.single-mvm_locatie,
+    body.single-mvm_gebouw,
+    body.single-mvm_gebeurtenis,
+    body.single-mvm_vereniging,
+    body.single-mvm_bedrijf,
+    body.single-mvm_beeld,
+    body.single-mvm_bron
+  ) .mvm-anchor-toc ol{
+    grid-template-columns:1fr!important;
+  }
+
+  :is(
+    body.single-mvm_encyclopedie,
+    body.single-mvm_persoon,
+    body.single-mvm_locatie,
+    body.single-mvm_gebouw,
+    body.single-mvm_gebeurtenis,
+    body.single-mvm_vereniging,
+    body.single-mvm_bedrijf,
+    body.single-mvm_beeld,
+    body.single-mvm_bron
+  ) .mvm-dossier-breadcrumb ol{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+  }
+}
