@@ -34,9 +34,9 @@ jobs:
           actual_sha="$(git rev-parse HEAD)"
           test "$actual_sha" = "$expected_sha"
 
-          expected_plugins='10882baf51e54750391212d8228a69f47d38a0c8'
+          expected_plugins='4d0938f25c693100daeb00ad87e440d3c6e2c88d'
           expected_themes='278f6089230fdd84e3a88043e68a98f5e38fb0ec'
-          expected_tests='8730ce0c8c458d320654e1d35e06467cb858ed48'
+          expected_tests='20bddbe3811b18c3da11aea52503b3cb3aeb9834'
 
           actual_plugins="$(git rev-parse HEAD:plugins)"
           actual_themes="$(git rev-parse HEAD:themes)"
@@ -75,6 +75,15 @@ jobs:
           set -euo pipefail
           find tests -maxdepth 1 -type f -name '*.cjs' -print0 \
             | xargs -0 -n1 node --check
+
+      - name: Run portable JavaScript contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          for test_file in tests/mvm-hub-newsroom-*.cjs; do
+            echo "Running ${test_file}"
+            node "${test_file}"
+          done
 
       - name: Run portable Hub smoke tests
         shell: bash
@@ -178,7 +187,7 @@ jobs:
           cat > dist/release-evidence.txt <<EOF
           repository=vanasten91-rgb/mierlovoormierlo-public
           source_commit=$source_sha
-          provenance_private_source_commit=380f9da760a73dedffa11f9a650851de0cb89e60
+          provenance_private_source_commit=94d032380808a804a16b302f0d1120092f370ae4
           plugins_git_tree=$plugins_tree
           themes_git_tree=$themes_tree
           sanitized_tests_git_tree=$tests_tree
