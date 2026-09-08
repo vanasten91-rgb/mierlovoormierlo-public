@@ -7,6 +7,7 @@ const root = path.resolve(__dirname, '..');
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 const hub = read('plugins/mvm-hub/assets/hub.css');
 const admin = read('plugins/mvm-hub/assets/newsroom2-admin.css');
+const collaboration = read('plugins/mvm-hub/assets/newsroom2-collaboration.css');
 const runtime = read('plugins/mvm-hub/assets/newsroom-runtime.css');
 
 function requireText(source, needle, label) {
@@ -43,6 +44,15 @@ requireMatch(admin, /\.mvm-nr2 th\s*\{[^}]*text-transform:\s*none;/s, 'normal-ca
 
 if (/\.mvm-nr2 th\s*\{[^}]*text-transform:\s*uppercase;/s.test(admin)) {
   throw new Error('Newsroom table headings must not be forced uppercase');
+}
+
+requireText(collaboration, 'border-radius:var(--nr-radius-sm,8px)', 'collaboration compact radius token');
+requireText(collaboration, 'border-radius:var(--nr-radius,12px)', 'collaboration standard radius token');
+requireText(collaboration, 'border-radius:var(--nr-radius-lg,18px)', 'collaboration large radius token');
+requireText(collaboration, 'box-shadow:var(--nr-shadow,0 8px 28px rgba(21,34,49,.08))', 'collaboration surface shadow token');
+
+if (/border-radius:(?:10|11|14|16|18)px/.test(collaboration)) {
+  throw new Error('Newsroom collaboration surfaces must use shared radius tokens instead of legacy fixed radii');
 }
 
 requireText(runtime, 'var(--mvm-radius-lg,18px)', 'runtime large radius token');
