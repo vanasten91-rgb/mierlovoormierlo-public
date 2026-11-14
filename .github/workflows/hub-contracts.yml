@@ -34,9 +34,9 @@ jobs:
           actual_sha="$(git rev-parse HEAD)"
           test "$actual_sha" = "$expected_sha"
 
-          expected_plugins='4d0938f25c693100daeb00ad87e440d3c6e2c88d'
+          expected_plugins='a1630285d1291fc3007961c6f69f1e55783c53cc'
           expected_themes='278f6089230fdd84e3a88043e68a98f5e38fb0ec'
-          expected_tests='20bddbe3811b18c3da11aea52503b3cb3aeb9834'
+          expected_tests='e477a9b8991af90af7d9fc3608f1ac96b149a97b'
 
           actual_plugins="$(git rev-parse HEAD:plugins)"
           actual_themes="$(git rev-parse HEAD:themes)"
